@@ -1,5 +1,6 @@
 {
   "version": "0.0.0",
+  "homepage":"https://x101046.github.io/vue3-vite2-ts-element",
   "scripts": {
     "dev": "vite --host",
     "build": "vue-tsc --noEmit && vite build",
