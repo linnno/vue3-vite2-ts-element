@@ -1,9 +1,10 @@
 <template>
   <img alt="Vue logo" src="../assets/logo.png" />
-  <h1>{{ msg }}</h1>
+
+  <h1>{{ msg }}123</h1>
 
   <p>
-    Recommended IDE setup:
+    Recommended IDE setup123:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
     +
     <a
