@@ -1,10 +1,9 @@
 <template>
   <img alt="Vue logo" src="../assets/logo.png" />
-
-  <h1>{{ msg }}123</h1>
+  <h1>{{ msg }}</h1>
 
   <p>
-    Recommended IDE setup123:
+    Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
     +
     <a
@@ -34,6 +33,7 @@
     Edit
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
+  <router-link to="/">Go to home</router-link>
 </template>
 
 <script lang="ts">

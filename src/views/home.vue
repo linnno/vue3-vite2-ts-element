@@ -1,5 +1,5 @@
 <template>
-  home
+  <router-link to="/helloWorld">Go to helloWorld</router-link>
 </template>
 
 <script>
