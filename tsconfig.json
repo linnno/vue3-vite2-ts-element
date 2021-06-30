@@ -8,7 +8,12 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    // 除了在alias中配置，还需在此配置
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+    },
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
