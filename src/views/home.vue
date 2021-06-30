@@ -4,10 +4,8 @@
   <router-link to="/test">Go to test</router-link>
 </template>
 
-<script>
-
+<script lang="ts">
 </script>
 
 <style scoped>
-
 </style>
