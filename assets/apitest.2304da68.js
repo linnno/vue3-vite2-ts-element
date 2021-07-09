@@ -1,0 +1,1 @@
+import{a as e,x as o,o as r,c as t}from"./vendor.30ed5fce.js";const n={setup(){const r=e(null);return o((()=>{console.log(r.value)})),{}}},s={ref:"root"};n.render=function(e,o,n,a,l,u){return r(),t("div",s,"This is a root elemen21t",512)};export default n;

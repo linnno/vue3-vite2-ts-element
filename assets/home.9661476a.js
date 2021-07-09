@@ -1,0 +1,1 @@
+import{p as a,e as t,r as s,o as e,c as o,f as r,i as n,m as c}from"./vendor.30ed5fce.js";var d={};const l=n();a("data-v-a04a34c0");const u=r("br",null,null,-1),f=c("Go to test");t();const v=l(((a,t,n,c,d,v)=>{const i=s("router-link");return e(),o("div",null,[u,r(i,{to:"/test"},{default:l((()=>[f])),_:1})])}));d.render=v,d.__scopeId="data-v-a04a34c0";export default d;
