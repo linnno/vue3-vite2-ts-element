@@ -1,18 +1,35 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
+import Layout from '@/layout/layoutTest.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('../views/home.vue')
-  }, {
-    path: '/helloWorld',
-    name: 'HelloWorld',
-    component: () => import('../views/helloworld.vue')
-  }, {
-    path: '/test',
-    name: 'Test',
-    component: () => import('../views/test.vue')
+    component: Layout,
+    redirect: '/home',
+    children: [{
+      path: 'home',
+      name: 'home',
+      component: () => import('@/views/home.vue'),
+      meta: { title: 'home', icon: 'form' }
+    }]
+  },
+  {
+    path: '/',
+    component: Layout,
+    redirect: '/test',
+    meta: { title: 'aaaa', icon: 'fullscreen' },
+    children: [{
+      path: 'test',
+      name: 'Test',
+      component: () => import('@/views/test.vue'),
+      meta: { title: 'Test' }
+    }, {
+      path: 'apitest',
+      name: 'apitest',
+      component: () => import('@/views/apitest.vue'),
+      meta: { title: 'apitest' }
+    }]
   }
 ];
 

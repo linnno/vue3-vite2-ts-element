@@ -1,3 +1,4 @@
 dist/*.js
 src/assets
 public/**/*.js
+.vscode/**.json

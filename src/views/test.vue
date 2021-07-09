@@ -1,36 +1,33 @@
 <template>
-  {{count}}
-  <button @click="increment">add</button>
+  <div>
+      <p>{{name}}</p>
+      <p>{{age}}</p>
+    <button @click="myFn">按钮</button>
+  </div>
 </template>
 
-<script lang="ts">
-import { ref, reactive, onMounted, computed } from 'vue';
-import { useStore } from '@/store/modules/user';
-
+<script>
+import { reactive, toRefs } from 'vue';
 export default {
+  name: 'App',
   setup() {
-    const store = useStore();
-    const readersNumber = ref<number>(0);
-
-    const book = reactive({ title: 'Vue 3 Guide' });
-    const count = computed(() => store.state.count);
-    onMounted(() => {
+    const obj = reactive({
+      name: 'lnj',
+      age: 18
     });
-    function increment() {
-      store.commit('increment');
-      console.log(count.value);
-    }
 
+    function myFn() {
+      obj.name = 'zs';
+      obj.age = 666;
+    }
     return {
-      readersNumber,
-      book,
-      count,
-      increment,
-      decrement: () => store.commit('decrement')
+      ...toRefs(obj),
+      myFn
     };
   }
 };
 </script>
 
-<style scoped>
+<style>
+
 </style>

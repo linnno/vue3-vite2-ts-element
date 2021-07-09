@@ -11,9 +11,17 @@
     "lib": ["esnext", "dom"],
     // 除了在alias中配置，还需在此配置
     "baseUrl": ".",
+    "types": ["node", "vite/client"],
     "paths": {
       "@/*": ["src/*"],
     },
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/utils/request.js"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/utils/path.js",
+  ],
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }

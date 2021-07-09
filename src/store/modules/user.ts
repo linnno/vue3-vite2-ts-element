@@ -3,17 +3,24 @@ import { InjectionKey } from 'vue'; // store namespace
 import { createStore, useStore as baseUseStore, Store } from 'vuex';
 
 export interface Props {
+  [key: string]: any
   count: number
+  test: string
 }
 
 export const key: InjectionKey<Store<Props>> = Symbol();
 
 export default createStore<Props>({
-  state: {
-    count: 0
-  },
+  state: (): Props => ({
+    count: 0,
+    test: ''
+  }),
   mutations: {
-    increment(state): void {
+    increment(state, { key, value }): void {
+      // eslint-disable-next-line no-prototype-builtins
+      if (state.hasOwnProperty(key)) {
+        state[key] = value;
+      }
       state.count++;
     },
     decrement(state): void {

@@ -10,7 +10,7 @@
   .sidebar-container {
     transition: width 0.28s;
     width: $sideBarWidth !important;
-    background-color: $menuBg;
+    background-color: $menuBg !important;
     height: 100%;
     position: fixed;
     font-size: 0px;
@@ -66,6 +66,14 @@
       border: none;
       height: 100%;
       width: 100% !important;
+    }
+    .submenu-title-noDropdown,
+    .el-submenu__title {
+      background-color: $menuBg;
+      color: $menuText;
+    }
+    .is-active {
+      color: $menuActiveText !important;
     }
 
     // menu hover
@@ -177,7 +185,6 @@
   }
 
   .withoutAnimation {
-
     .main-container,
     .sidebar-container {
       transition: none;
@@ -197,6 +204,7 @@
     }
   }
 
+  
   .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {
     &:hover {
@@ -204,7 +212,6 @@
       background-color: $menuHover !important;
     }
   }
-
   // the scroll bar appears when the subMenu is too long
   >.el-menu--popup {
     max-height: 100vh;

@@ -1,7 +1,8 @@
 <template>
-  <router-link to="/helloWorld">Go to helloWorld</router-link>
-  <br>
-  <router-link to="/test">Go to test</router-link>
+  <div>
+    <br>
+    <router-link to="/test">Go to test</router-link>
+  </div>
 </template>
 
 <script lang="ts">
