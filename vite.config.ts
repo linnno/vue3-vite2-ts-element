@@ -1,25 +1,26 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import viteSvgIcons from 'vite-plugin-svg-icons';
 
-// https://vitejs.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/vue3-vite2-ts-element/' : '/',
   server: {
     https: false,
-    // proxy: createProxy(VITE_PROXY),
+    port: 3001
   },
-  plugins: [vue()]
-})
-
-
-// export default({ command }) => {
-//   return {
-//     base: process.env.NODE_ENV === 'production' ? '/[项目名]/' : '/',
-//     // 服务端渲染
-//     server: {
-//       https: false,
-//       // proxy: createProxy(VITE_PROXY),
-//     },
-//     plugins: [vue()]
-//   };
-// };
+  resolve: {
+    alias: { // 还需在tscofig中配置
+      '@': resolve(__dirname, './src')
+    }
+  },
+  plugins: [
+    vue(),
+    viteSvgIcons({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [resolve(process.cwd(), 'src/icons/svg')],
+      // 指定symbolId格式
+      symbolId: 'icon-[dir]-[name]'
+    })
+  ]
+});
