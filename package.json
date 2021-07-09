@@ -3,7 +3,7 @@
   "homepage": "https://x101046.github.io/vue3-vite2-ts-element",
   "scripts": {
     "dev": "cross-env vite --host",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "cross-env vite build",
     "serve": "vite preview",
     "lint": "eslint --ext .vue --ext .ts src/"
   },
