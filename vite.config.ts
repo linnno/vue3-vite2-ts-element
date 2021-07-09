@@ -14,9 +14,6 @@ export default defineConfig({
       '@': resolve(__dirname, './src')
     }
   },
-  define: {
-    'process.env': process.env
-  },
   plugins: [
     vue(),
     viteSvgIcons({
