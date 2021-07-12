@@ -21,7 +21,8 @@
 <script lang="ts">
 import {
   computed,
-  defineComponent
+  defineComponent,
+  onMounted
 } from 'vue';
 import { useStore } from '@/store/modules/setting';
 import { useStore as appUseStore } from '@/store/modules/app';
@@ -29,7 +30,7 @@ import { useRoute, useRouter } from 'vue-router';
 
 import Logo from './Logo.vue';
 import SidebarItem from './SidebarItem.vue';
-import variables from '@/styles/variables';
+import variables from '@/styles/variables.module.scss';
 
 export default defineComponent({
   components: { SidebarItem, Logo },
@@ -50,12 +51,13 @@ export default defineComponent({
     const showLogo = computed(() => {
       return store.state.sidebarLogo;
     });
-
+    onMounted(() => {
+      console.log(variables)
+    })
     const appStore = appUseStore();
     const isCollapse = computed(() => {
       return !appStore.getters.sidebar.opened;
     });
-
     return {
       routes,
       activeMenu,
